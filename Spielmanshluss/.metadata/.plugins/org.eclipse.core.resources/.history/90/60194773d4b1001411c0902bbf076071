@@ -1,0 +1,86 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.FlowLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JRadioButton;
+import javax.swing.JLabel;
+import java.awt.Color;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+
+
+public class Ja {
+
+	private JFrame frame;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ja window = new Ja();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Ja() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	
+	
+	private void initialize() {
+		frame = new JFrame();
+		frame.addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent arg0) {
+				
+			}
+		});
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		
+		JLabel lblNewLabel_1 = new JLabel("Wybierz bro\u0144:");
+		panel.add(lblNewLabel_1);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("laser");
+		rdbtnNewRadioButton.setSelected(true);
+		buttonGroup.add(rdbtnNewRadioButton);
+		panel.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("pociski plazmowe");
+		buttonGroup.add(rdbtnNewRadioButton_1);
+		panel.add(rdbtnNewRadioButton_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.LIGHT_GRAY);
+		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Ja.class.getResource("/images/mage.png")));
+		lblNewLabel.setBounds(0, 55, 82, 117);
+		panel_1.add(lblNewLabel);
+	}
+}

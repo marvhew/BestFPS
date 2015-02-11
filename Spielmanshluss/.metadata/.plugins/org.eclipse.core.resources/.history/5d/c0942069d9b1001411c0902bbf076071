@@ -1,0 +1,23 @@
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+
+
+public class Bullet extends Thread {
+	private JComponent weapon;
+	private JPanel area;
+	
+	public Bullet(JComponent weapon, JPanel area)
+	{
+		this.weapon=weapon;
+		this.area=area;
+	}
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		super.run();
+	}
+	
+}
