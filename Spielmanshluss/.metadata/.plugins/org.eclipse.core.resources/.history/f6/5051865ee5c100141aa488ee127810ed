@@ -1,0 +1,15 @@
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+
+
+public class BulletManager {
+	private Bullet bullet;
+	public void addBullet(JComponent Weapon, JPanel area)
+	{
+		
+	}
+	public Bullet getBuller()
+	{
+		return bullet;
+	}
+}

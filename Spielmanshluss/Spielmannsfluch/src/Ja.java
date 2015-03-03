@@ -74,7 +74,7 @@ public class Ja {
 		final JRadioButton bigWeapon = new JRadioButton("pociski plazmowe");
 		Unit = new JLabel("");
 		frame = new JFrame();
-		
+		final BulletManager bullet = new BulletManager();
 		JLabel lblNewLabel_1 = new JLabel("Wybierz bro\u0144:");
 		
 		Unit.addMouseListener(new MouseAdapter() {
@@ -95,8 +95,7 @@ public class Ja {
 				weapon.setBounds(82, getSoldierHeightCenter(), 50, 25);
 				area.add(weapon);
 				frame.repaint();
-				Bullet bullet = new Bullet(weapon,area);
-				bullet.start();
+				bullet.addBullet(weapon, area);
 			}
 		});
 		frame.addComponentListener(new ComponentAdapter() {
